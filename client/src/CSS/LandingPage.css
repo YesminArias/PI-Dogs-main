@@ -1,0 +1,45 @@
+
+
+ .imaLoading {
+    display: flex;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 600px;
+    margin-right:10%;
+} 
+ .boton{
+     width: 150px;
+    color:rgb(205, 205, 218);
+    border-radius: 15;
+    background-color: rgba(26, 24, 25, 0.781);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    margin-left: 45%; 
+    border-radius: 15%;
+    font-size: 30px;
+}
+.boton:hover{
+    background-color: rgb(231, 100, 209);
+}
+.title{
+    color:rgb(151, 16, 151);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: inset;
+    border-color: aliceblue;
+    margin-left: 100px;
+    margin-top: 300px;
+    background: white;
+    font-size: 50px;
+
+} 
+#justificado{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin: 5%;
+}
+
+html{
+    background: url("../imagen/fondo2.jpg");
+}

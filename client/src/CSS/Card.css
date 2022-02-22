@@ -1,0 +1,81 @@
+.card {
+    width: 350px;
+     /*
+    height: 400px; */
+    border-radius: 10%;
+    border: 1px solid rgba(34, 25, 25, 0.24);
+    margin: 20px;
+    background-color: rgba(17, 13, 13, 0.466);
+    box-shadow: 0px 0px 5px 5px rgba(20, 6, 20, 0.568);    text-align: center;
+}
+.card:hover{
+    background-color: rgba(248, 79, 206, 0.863);
+    text-transform: capitalize;
+    width: 360px;
+    
+   }
+   
+.title2{
+    color:rgb(151, 16, 151);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: white;
+    bottom: 10%;
+    top: 20%;
+    border-radius: 10%;
+} 
+.title3{
+    color:rgb(255, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: rgba(34, 7, 7, 0.164);
+    bottom: 10%;
+    top: 20%; 
+    border-radius: 10%;
+    justify-items: center;
+    padding: 5px;
+}
+.title4{
+    color:rgb(44, 28, 28);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   margin-left: 200px;
+   margin-top: 300px;
+   justify-content: end;
+  
+    
+} 
+.base1{
+    background-color: rgba(39, 34, 34, 0.329);
+    color: aliceblue;
+    justify-content: center;
+    border-radius: 10%;
+    padding: 5px;
+    text-decoration: inherit;
+    
+    
+}
+.base2{
+    background-color: rgba(41, 29, 29, 0.592);
+    color: aliceblue;
+    justify-content: center;
+    border-radius: 10%;
+    padding: 5px;
+    text-decoration: inherit;
+
+}
+.imageCard{
+    width:200px; 
+    height:200px;
+    border-radius: 10%;
+    justify-content: center;
+    border-style:outset;
+    border-color: rgba(221, 199, 216, 0.781);
+    border-width: 7px;
+}
+.base11{
+    background-color: rgba(39, 34, 34, 0.329);
+    color: aliceblue;
+    justify-content: center;
+    border-radius: 10%;
+    padding: 5px;
+    text-decoration: inherit;
+    height: 80px;
+}

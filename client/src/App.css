@@ -1,9 +1,14 @@
 .App {
   text-align: center;
+  font-family: 'Lucida Grande',  Arial, sans-serif;
+  box-shadow: #d8dde7;
+  box-sizing: border-box;
+  color: #2b57b8;
+  font-weight: 600;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 50vmin;
   pointer-events: none;
 }
 
