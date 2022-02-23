@@ -6,12 +6,12 @@ import { getTemperaments, getDogs, filterTemperament } from "../actions/index";
 
 export default function FilterTempe() {
   const dispatch = useDispatch();
-  const allTemperaments= useSelector((e)=> e.temperaments)
+  const allTemperaments= useSelector((e)=> e.temperament)
 
 
   useEffect( ()=> {
       dispatch(getTemperaments())
-  },[dispatch])
+  },[])
   
   const handleFilterTemperaments=(e)=>{
     dispatch(filterTemperament(e.target.value))

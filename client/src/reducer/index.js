@@ -14,9 +14,11 @@ function rootReducer(state= inicialState, action){
             return{
                 ...state,
                 allDogs: action.payload,
-                dogs: action.payload
+                dogs:[]
+               
             }
         case 'GET_TEMPERAMENTS':
+            
             return{
                 ...state,
                 temperament: action.payload 
@@ -32,26 +34,28 @@ function rootReducer(state= inicialState, action){
                 detail: action.payload
             }
         case 'SORT_NAME':
-            let sortNames = action.payload === 'asc' 
-            ?   state.dogs.sort(function (a, b){
-                if(a.name >b.name) return 1;
-                if(a.name <b.name) return -1;
-                return 0;
-            })
-            : state.dogs.sort(function (a, b){
-                if(a.name >b.name) return -1;
-                if(a.name <b.name) return 1;
-                return 0;
-            }) 
+            
+
            
+           if( action.payload === 'asc'){
             return{
                 ...state,
-                allDogs:sortNames,
-                dogs: sortNames
+                allDogs: [...state.allDogs].sort((a, b) => (a < b ? 1 : -1)),
+                dogs: [...state.dogs].sort((a, b) => (a < b ? 1 : -1)),
+                }
             }
+            if( action.payload === 'desc'){
+            return {
+                ...state,
+                allDogs: [...state.allDogs].sort((a, b) => (a > b ? 1 : -1)),
+                dogs: [...state.dogs].sort((a, b) => (a > b ? 1 : -1)),
+                }
+            }
+               
         case 'FILTER_TEMPERAMENT':
-            const allBreeds = state.dogs;
-            const filterTemperament = action.payload === "all" ? allBreeds : allBreeds.filter (e => {
+            const allBreeds = state.allDogs;
+            console.log(action.payload)
+            const filterTemperament = action.payload === "All" ? allBreeds : allBreeds.filter (e => {
                 if(e.temperament){
                     if( e.temperament.includes(action.payload)){
                         return e

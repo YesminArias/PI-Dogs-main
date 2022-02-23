@@ -1,0 +1,56 @@
+.titleForm{
+justify-content: center;
+align-items: center;
+color:rgb(151, 16, 151);
+font-family: Georgia, 'Times New Roman', Times, serif;
+      
+}
+.title5{
+    font-size: 26px;
+    margin-top: 20%;
+    padding-bottom: 6%;
+
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(252, 240, 255, 0.842);
+    width: 28%;
+
+    border-radius: 15%;
+    box-shadow: 5px 5px 5px 5px rgb(66, 60, 66);
+  
+    margin-top: 10%;
+    margin-left: 35%;
+}
+input{
+    border-radius: 5%;
+    
+}
+.boton5{
+    width: 200px;
+    color:rgb(205, 205, 218);
+    border-radius: 15;
+    background-color: rgba(27, 19, 25, 0.671);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    border-radius: 15%;
+    font-size: 20px;
+    margin: 5%;
+    margin-left: 25%;
+    
+}
+    
+.boton5:hover{
+    background-color: rgba(224, 112, 224, 0.925); 
+}
+.boton4{
+    width: 200px;
+   
+    
+}
+    
+.boton:hover{
+    background-color: rgba(224, 112, 224, 0.925); 
+}
