@@ -1,18 +1,10 @@
 
 
- .imaLoading {
-    display: flex;
-    flex-wrap: wrap;
-    background-repeat: no-repeat;
-    width: 600px;
-    height: 600px;
-    margin-right:10%;
-} 
  .boton{
      width: 150px;
-    color:rgb(205, 205, 218);
+    color:#caf0f8;
     border-radius: 15;
-    background-color: rgba(26, 24, 25, 0.781);
+    background-color: #93b7e1;
     font-family: Georgia, 'Times New Roman', Times, serif;
     cursor: pointer;
     margin-left: 45%; 
@@ -20,10 +12,10 @@
     font-size: 30px;
 }
 .boton:hover{
-    background-color: rgb(231, 100, 209);
+    background-color: #549df0; 
 }
 .title{
-    color:rgb(151, 16, 151);
+    color:rgb(21, 79, 187);
     font-family: Georgia, 'Times New Roman', Times, serif;
     box-shadow: inset;
     border-color: aliceblue;

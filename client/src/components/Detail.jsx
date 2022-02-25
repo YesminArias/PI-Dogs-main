@@ -44,11 +44,11 @@ export default function Detail(){
                         </div>
                         <div className="base3">
                             <h4>Height:</h4>
-                            <p>{dogDetail[0].height.metric}</p>
+                            <p>{dogDetail[0].height}</p>
                         </div >
                         <div className="base3">
                             <h4>Weight:</h4>
-                            <p>{dogDetail[0].weight.metric}</p>
+                            <p>{dogDetail[0].weight}</p>
                         </div>
                         <div className="base3">
                             <h4>Life Span</h4>

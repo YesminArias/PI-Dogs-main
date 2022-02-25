@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
     height,
     weight,
     life_span,
-    temperaments,
+    temperament,
     image,
   } = req.body;
 
@@ -21,13 +21,18 @@ router.post("/", async (req, res) => {
     weight: weight,
     life_span: life_span,
     image: image,
+    temperament: temperament,
+    
   });
-  const temperamentbd = await Temperament.findAll({//que me encuentre todaslos temperamentos que coincidan 
+  /* const temperamentbd = await Temperament.findAll({//que me encuentre todaslos temperamentos que coincidan 
     where: { name: temperaments },
   });
 
  await createDog.addTemperament(temperamentbd);// agrego temperaments a a create
-  res.send("Raza Creada");
+  res.send("Raza Creada"); */
+  
+res.status(201).json(createDog);
 });
 
+ 
 module.exports = router;

@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../CSS/Loanding.css'
  
 export default function Loanding(){
     return(

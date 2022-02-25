@@ -1,0 +1,23 @@
+
+ .imaLoading {
+    display: flex;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 600px;
+    margin-right:10%;
+} 
+.paginado{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.title4{
+    color:#2751db;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   margin-left: 200px;
+   margin-top: 300px;
+   justify-content: end;
+  
+    
+} 

@@ -33,10 +33,7 @@ function rootReducer(state= inicialState, action){
                 ...state,
                 detail: action.payload
             }
-        case 'SORT_NAME':
-            
-
-           
+        case 'SORT_NAME':           
            if( action.payload === 'asc'){
             return{
                 ...state,
@@ -68,9 +65,53 @@ function rootReducer(state= inicialState, action){
             }
         
         case 'SORT_WEIGHT':
-            return{
-                ...state,
+            if( action.payload === 'small'){
+                
+                return{
+                    ...state,
+                    
+                    allDogs: [...state.allDogs].sort((a, b) =>{
+                        let pesoA= parseInt(a.weight.split('-')[0]);
+                        let pesoB= parseInt(b.weight.split('-')[0]);
+                       
+                        if(pesoA > pesoB) return 1;
+                        if(pesoA < pesoB) return -1;
+                        else return 0;   
+                    }),
+                    dogs: [...state.dogs].sort((a, b) =>{
+                        let pesoA= parseInt(a.weight.split('-')[0]);
+                        let pesoB= parseInt(b.weight.split('-')[0]);
+                            
+                        
+                        if(pesoA > pesoB) return 1;
+                        if(pesoA < pesoB) return -1;
+                        else return 0;
+                    })
+                }
             }
+            
+                if( action.payload === 'big'){
+                    
+                return {
+                    allDogs: [...state.allDogs].sort((a, b) =>{
+                        let pesoA= parseInt(a.weight.split('-')[0]);
+                        let pesoB= parseInt(b.weight.split('-')[0]);
+                           
+                        if(pesoA < pesoB) return 1;
+                        if(pesoA > pesoB) return -1;
+                        else return 0;   
+                    }),
+                    dogs: [...state.dogs].sort((a, b) =>{
+                        let pesoA= parseInt(a.weight.split('-')[0]);
+                        let pesoB= parseInt(b.weight.split('-')[0]);
+
+                        if(pesoA < pesoB) return 1;
+                        if(pesoA > pesoB) return -1;
+                        else return 0;   
+                    })
+                }
+                }
+
         case 'RES_STATE':
             return{
                 ...state,

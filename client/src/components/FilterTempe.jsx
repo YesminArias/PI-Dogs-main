@@ -21,7 +21,7 @@ export default function FilterTempe() {
   return (
     <div >
          <div>
-            <select className="boton3" onChange={e=> handleFilterTemperaments(e)}>
+            <select className="botonfiltro" onChange={e=> handleFilterTemperaments(e)}>
                 <option value="All">
                     all Temperaments
                 </option>

@@ -26,8 +26,8 @@ const getApi = async () => {
       image: e.image.url,
       name: e.name,
       temperament: e.temperament,
-      weight: e.weight,
-      height: e.height,
+      weight: e.weight.imperial,
+      height: e.height.imperial,
       life_span: e.life_span,
     };
   });
@@ -44,16 +44,7 @@ const getBreeds = async () => {
 router.get("/", async (req, res) => {
   const { name } = req.query;
   const allBreeds = await getBreeds();
-  /* const resApi = await axios.get('https://api.thedogapi.com/v1/breeds').catch();
-    const apiUrl =  resApi.data.map(e=> {
-        return {
-            id:e.id,
-            image: e.image.url,
-            name: e.name,
-           temperament: e.temperament,
-           weight: e.weight.metric,
-       }
-    }); */
+ 
   if (!name) {
     res.json(allBreeds);
   }

@@ -1,8 +1,8 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getDogs, getTemperaments, getDetail, sortName} from '../actions';
-import  "../CSS/Home.css";
+import {getDogs, sortWeight, sortName} from '../actions';
+import  "../CSS/NavBar.css";
 import FilterTempe from './FilterTempe';
 import Search from './Search';
 
@@ -17,22 +17,38 @@ export default function NavBar(){
     e.preventDefault();
     dispatch(sortName(e.target.value));
   }
+  function handleOrdenarWeitgh(e) {
+    e.preventDefault();
+    dispatch(sortWeight(e.target.value));
+  }
   
   return(
-<div className='paginado2'>
-            <FilterTempe />
-                   {/*  <form className="base2"onClick={e=> handleOrdenar(e)} >
-                        <input type='radio' value= "asc" ></input>
-                            <label value='asc'>Ascendentemente</label><br></br>
-                        <input type='radio' value="desc"></input>
-                             <label value='desc'>Descendentemente</label>
-                    </form> */}
-     <select className="boton3" onChange={e=> handleOrdenar(e)}>
-              <option value='asc'> Ascendentemente  </option>
-             <option value='desc'> Descendentemente  </option>
-                            
-       </select> 
-                    <Search/>
-                </div>
+<div>
+      
+  <div className="filtros">
+   <div>
+     <Search/>
+   </div>
+      <div>
+        <FilterTempe />
+      </div>  
+      <div>
+         <select className="botonfiltro" onChange={e=> handleOrdenarWeitgh(e)}>
+            <option value="default">By Weight</option>
+            <option value='small'> small  </option>
+            <option value='big'> big  </option>
+         </select> 
+      </div>  
+     
+      <div>
+         <select className="botonfiltro" onChange={e=> handleOrdenar(e)}>
+            <option value='default'>Alphabetically</option>
+            <option value='asc'> A a Z  </option>
+            <option value='desc'> Z a A  </option>
+         </select> 
+       </div> 
+   </div>
+   
+</div>
   )
 }

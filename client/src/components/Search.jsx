@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getName, getDogs } from "../actions/index";
+import "../CSS/Search.css";
 
 export default function Search() {
   const dispatch = useDispatch();
@@ -25,14 +26,15 @@ export default function Search() {
      setName(""); 
   }
   return (
-    <div >
-         <div>
+    <div>
+         <div className="search">
       <input
         type="text"
+        placeholder='Dog Breed...'
          onChange={(e) => handleInputChange(e)} 
          onInput={(e) => handleSubmit(e)} 
         className='buscador'
-      /><span> 🔍</span>
+      /><span className="figurabuscador"> 🔍</span>
      </div> 
     </div>
   );

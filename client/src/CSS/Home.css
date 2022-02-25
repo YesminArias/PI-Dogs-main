@@ -1,23 +1,4 @@
- .boton2{
-    color:rgb(205, 205, 218);
-    border-radius: 15;
-    background-color: rgba(46, 32, 42, 0.705);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    cursor: pointer;
-    border-radius: 15%;
-    font-size: 26px;
-} 
-.boton3{
-    color:rgb(205, 205, 218);
-    border-radius: 15;
-    background-color: rgba(27, 19, 25, 0.671);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    cursor: pointer;
-    border-radius: 15%;
-}
-.boton3:hover{
-    background-color: rgba(224, 112, 224, 0.925); 
-}
+
 .base3{
     font-size: 20px ;
     margin: 5px;
@@ -33,16 +14,55 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 }
-
-.buscador{
-    background-color: rgba(239, 237, 241, 0.918);
-    font-size: 17px;
+.titleHome{
+    margin-left: 5%;
+    color:rgb(21, 79, 187);
     font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: inset;
+    border-color: aliceblue;
+    background: white;
+    font-size: 50px;
+
+} 
+
+#botonCreate{
+    font-size: 25px;
+    color:#dbe8f5;
+    border-radius: 15;
+    background-color:#87bee4;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 5px 5px 10px 10px #d1e5f8;
     
+  
 }
-.buscador:hover{
-    background-color: rgba(226, 138, 222, 0.788);
+#botonCreate:hover{
+    background-color: #549df0; 
+}
+#home{
+    width: 45px;
+    height: 45px;
+}
+#home:hover{
+  background-color: #90e0ef;
+    cursor: pointer;
+    border-radius:25%;
+}
+.principal{
+    display: flex;
+    justify-content: space-evenly;
 }
 
+.header{
+ background-color: rgba(124, 142, 243, 0.199);
+ padding-bottom: 1%;
+}
+.ubboton{
+    display: flex;
+    justify-content: end;
+    margin-right: 8%;
+}
 
 
