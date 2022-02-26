@@ -22,7 +22,7 @@ export default function DogCreate() {
     temperament: [],
     created: false,
   });
-  const [error, setError] = useState({});
+ 
 
   useEffect(() => {
     dispatch(getTemperaments());
@@ -53,7 +53,7 @@ export default function DogCreate() {
         temperament: [],
         created: true,
       });
-    }
+    } alert(`${input.name}+ created`)
   }
   function handelChange(e) {
     setInput({
@@ -62,15 +62,22 @@ export default function DogCreate() {
     });
   }
   function handleSelectTemperament(e) {
+  if(!input.temperament.includes(e.target.value)){
+  
     setInput({
       ...input,
       temperament: [...input.temperament, e.target.value],
     });
+  } 
+   
   }
   function handleDelete(e) {
-    setInput({
+    console.log(e)
+    e.preventDefault();
+       setInput({
       ...input,
-      temperament: input.temperament.filter((temp) => temp !== e),
+      temperament: input.temperament.filter((temp) => temp !== e.target.innerText),
+      
     });
   }
 
@@ -80,7 +87,7 @@ export default function DogCreate() {
         <div>
           
           <Link to="/home">
-            <button className="boton5" onClick={resState}>
+            <button className="boton5">
               Home
             </button>
           </Link>
@@ -172,14 +179,13 @@ export default function DogCreate() {
                   ))}
               </select><br/>
 
-              {input.temperament.map((e) => {
+              {input.temperament.map((nombre) => {
                 return (
                   <div className="concatFiltro">
-                  <span key={e}>
-                    <strong>{e}</strong>
-                    <button className="boton3" onClick={(e) => handleDelete(e)}>
-                      {" "}
-                      x{" "}
+                  <span key={nombre}>
+                   
+                    <button className="boton3" onClick={(nombre)=> handleDelete(nombre)}>
+                      {nombre} 
                     </button>
                   </span>
                   </div>

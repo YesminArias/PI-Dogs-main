@@ -11,6 +11,7 @@
     border-width:5%;
     padding: 4px 4px 4px 4px;
     margin-left:20px;
+    height: 40px;
 }
 .botonfiltro:hover{
     background-color: #549df0; 

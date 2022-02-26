@@ -34,7 +34,7 @@ export default function NavBar(){
       </div>  
       <div>
          <select className="botonfiltro" onChange={e=> handleOrdenarWeitgh(e)}>
-            <option value="default">By Weight</option>
+            <option value='All'>By Weight</option>
             <option value='small'> small  </option>
             <option value='big'> big  </option>
          </select> 
@@ -42,7 +42,7 @@ export default function NavBar(){
      
       <div>
          <select className="botonfiltro" onChange={e=> handleOrdenar(e)}>
-            <option value='default'>Alphabetically</option>
+            <option value='All'>Alphabetically</option>
             <option value='asc'> A a Z  </option>
             <option value='desc'> Z a A  </option>
          </select> 

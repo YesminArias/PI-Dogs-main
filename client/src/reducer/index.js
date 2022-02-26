@@ -13,8 +13,8 @@ function rootReducer(state= inicialState, action){
         case 'GET_DOGS':
             return{
                 ...state,
+                dogs:action.payload,
                 allDogs: action.payload,
-                dogs:[]
                
             }
         case 'GET_TEMPERAMENTS':
@@ -34,24 +34,21 @@ function rootReducer(state= inicialState, action){
                 detail: action.payload
             }
         case 'SORT_NAME':           
-           if( action.payload === 'asc'){
-            return{
-                ...state,
-                allDogs: [...state.allDogs].sort((a, b) => (a < b ? 1 : -1)),
-                dogs: [...state.dogs].sort((a, b) => (a < b ? 1 : -1)),
-                }
-            }
+
             if( action.payload === 'desc'){
             return {
                 ...state,
-                allDogs: [...state.allDogs].sort((a, b) => (a > b ? 1 : -1)),
-                dogs: [...state.dogs].sort((a, b) => (a > b ? 1 : -1)),
+                dogs: [...state.dogs].sort((a, b) => (a.name.toUpperCase() < b.name.toUpperCase() ? 1 : -1)),
                 }
-            }
+            } console.log(action.payload)
+            return{
+                ...state,
+                dogs: [...state.dogs].sort((a, b) => (a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1)),
+
+                }
                
         case 'FILTER_TEMPERAMENT':
             const allBreeds = state.allDogs;
-            console.log(action.payload)
             const filterTemperament = action.payload === "All" ? allBreeds : allBreeds.filter (e => {
                 if(e.temperament){
                     if( e.temperament.includes(action.payload)){
@@ -63,8 +60,15 @@ function rootReducer(state= inicialState, action){
                 ...state,
                 dogs: filterTemperament
             }
-        
+            
         case 'SORT_WEIGHT':
+            if( action.payload === 'All'){
+                return {
+                    ...state,
+                    allDogs: [...state.allDogs],
+                    dogs: [...state.dogs],
+                }
+            }
             if( action.payload === 'small'){
                 
                 return{

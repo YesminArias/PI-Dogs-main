@@ -11,7 +11,8 @@ const getBd = async () => {
     include: {
       model: Temperament,
       attributes: ["name"],
-      through: {//
+      through: {
+        //
         attributes: [],
       },
     },
@@ -19,7 +20,9 @@ const getBd = async () => {
 };
 
 const getApi = async () => {
-  const apiUrl = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`);
+  const apiUrl = await axios.get(
+    `https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`
+  );
   const apiInfo = await apiUrl.data.map((e) => {
     return {
       id: e.id,
@@ -44,16 +47,17 @@ const getBreeds = async () => {
 router.get("/", async (req, res) => {
   const { name } = req.query;
   const allBreeds = await getBreeds();
- 
+
   if (!name) {
-    res.json(allBreeds);
+    res.status(200).json(allBreeds);
+  } else {
+    const filtrados = allBreeds.filter((e) => {
+      const names = e.name.toUpperCase();
+      if (names.includes(name.toUpperCase())) return names;
+    });
+    res.status(200).json(filtrados);
   }
-  const filtrados = allBreeds.filter((e) => {
-    const names = e.name.toUpperCase();
-    if (names.includes(name.toUpperCase())) return names;
-  });
-  res.status(200).json(filtrados);
-  res.status(400).send("no se encuentra");
+ /*  res.status(400).send("no se encuentra"); */
 });
 
 router.get("/:id", async (req, res) => {
