@@ -15,7 +15,7 @@ export default function Search() {
      e.preventDefault();
       setName(e.target.value);
      
-      if(name.length>1){
+      if(name.length>=1){
     dispatch(getName(name));
   } else{
     dispatch(getDogs());

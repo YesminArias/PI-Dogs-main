@@ -5,6 +5,7 @@ import {getDogs, sortWeight, sortName} from '../actions';
 import  "../CSS/NavBar.css";
 import FilterTempe from './FilterTempe';
 import Search from './Search';
+import FilterExistingBreed from "./FilterExistingBreed";
 
 export default function NavBar(){
     const dispatch = useDispatch()//para despachar mis acciones
@@ -29,8 +30,9 @@ export default function NavBar(){
    <div>
      <Search/>
    </div>
-      <div>
-        <FilterTempe />
+      <div> 
+        <FilterTempe /> 
+        <FilterExistingBreed/>
       </div>  
       <div>
          <select className="botonfiltro" onChange={e=> handleOrdenarWeitgh(e)}>

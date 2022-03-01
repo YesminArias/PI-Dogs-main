@@ -21,7 +21,7 @@ export default function DogCreate() {
     maxlife_span: "",
     image: "",
     temperament: [],
-    created: false,
+    createdInBd: false,
   });
   const [errors, setErrors] = useState({});
  
@@ -54,7 +54,7 @@ export default function DogCreate() {
         maxlife_span: "",
         image: "",
         temperament: [],
-        created: true,
+        createdInBd: true,
       });
   }
   function handelChange(e) {

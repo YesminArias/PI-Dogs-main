@@ -24,14 +24,11 @@ router.post("/", async (req, res) => {
     temperament: temperament,
     
   });
-  /* const temperamentbd = await Temperament.findAll({//que me encuentre todaslos temperamentos que coincidan 
-    where: { name: temperaments },
-  });
-
- await createDog.addTemperament(temperamentbd);// agrego temperaments a a create
-  res.send("Raza Creada"); */
-  
-res.status(201).json(createDog);
+ if(createDog){
+res.status(200).json(createDog);
+ }else{
+   res.status(500).send('uncreated dog')
+ }
 });
 
  

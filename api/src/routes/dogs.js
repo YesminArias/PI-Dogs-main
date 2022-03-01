@@ -57,7 +57,7 @@ router.get("/", async (req, res) => {
     });
     filtrados.length 
     ? res.status(200).json(filtrados)
-    : res.status(404).send("Raza no encontrada");
+    : res.status(400).send("Raza no encontrada");
   }
    
 });

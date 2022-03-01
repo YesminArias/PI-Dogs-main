@@ -59,9 +59,34 @@ function rootReducer(state= inicialState, action){
             })
             return{
                 ...state,
-                dogs: filterTemperament
+                dogs: filterTemperament,
             }
+        case "FILTER_EXISTING_BREED":
+            console.log(action.payload)
+            if(action.payload === "todo"){
             
+                return { 
+                    ...state,
+                    dogs: [...state.allDogs],
+                    
+                }
+            }else if( action.payload === "db"){
+
+             return { 
+                ...state,
+                 dogs : state.allDogs.filter((breed)=> breed.createdInBd === true),
+                /*  allDogs : state.allDogs.filter((breed)=> breed.createdInBd === true)   */  
+                        
+                    }
+            }else{
+                return { 
+                    ...state,
+                     dogs : state.allDogs.filter((breed)=> breed.createdInBd === undefined),
+                    /*  allDogs : state.allDogs.filter((breed)=> breed.createdInBd === undefined) */    
+                            
+                        }
+            }
+
         case 'SORT_WEIGHT':
             if( action.payload === 'All'){
                 return {

@@ -53,6 +53,13 @@ export function filterTemperament(payload){
         payload,
     }
 }
+
+export function filterExistingBreed(payload){
+    return {
+        type:"FILTER_EXISTING_BREED",
+        payload,
+    }
+}
 export function sortWeight(payload){
     return {
         type:"SORT_WEIGHT",
