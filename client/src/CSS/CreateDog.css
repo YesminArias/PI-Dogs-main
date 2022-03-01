@@ -86,3 +86,7 @@ input{
 .boton3:hover{
     background-color: #549df0; 
 }
+strong {
+    color: rgb(236, 52, 52);
+    justify-content:center;
+}

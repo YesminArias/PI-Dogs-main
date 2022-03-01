@@ -55,6 +55,7 @@ function rootReducer(state= inicialState, action){
                         return e
                     }
             }
+            return false;
             })
             return{
                 ...state,
@@ -114,14 +115,14 @@ function rootReducer(state= inicialState, action){
                         else return 0;   
                     })
                 }
-                }
-
+                };
+                break;
         case 'RES_STATE':
             return{
                 ...state,
                 detail: []
             }
-        
+            
             default:
                 return state;
     }

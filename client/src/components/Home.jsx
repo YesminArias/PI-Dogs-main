@@ -76,6 +76,7 @@ export default function Home() {
         <img
           id="home"
           src="https://cdn-icons-png.flaticon.com/512/35/35145.png"
+          alt="no encontrada"
         />
           </Link>
       </div>

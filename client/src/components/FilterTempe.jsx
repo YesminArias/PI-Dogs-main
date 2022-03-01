@@ -1,6 +1,6 @@
-import { React, useState, useEffect } from "react";
+import { React, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemperaments, getDogs, filterTemperament } from "../actions/index";
+import { getTemperaments, filterTemperament } from "../actions/index";
 
 
 
@@ -11,7 +11,7 @@ export default function FilterTempe() {
 
   useEffect( ()=> {
       dispatch(getTemperaments())
-  },[])
+  },[dispatch])
   
   const handleFilterTemperaments=(e)=>{
     dispatch(filterTemperament(e.target.value))

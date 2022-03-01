@@ -29,11 +29,11 @@ module.exports = (sequelize) => {
     },
     image:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     temperament:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     
     createdInBd:{

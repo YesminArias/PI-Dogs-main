@@ -55,11 +55,13 @@ router.get("/", async (req, res) => {
       const names = e.name.toUpperCase();
       if (names.includes(name.toUpperCase())) return names;
     });
-    res.status(200).json(filtrados);
+    filtrados.length 
+    ? res.status(200).json(filtrados)
+    : res.status(404).send("Raza no encontrada");
   }
- /*  res.status(400).send("no se encuentra"); */
+   
 });
-
+   
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
   const breeds = await getBreeds();

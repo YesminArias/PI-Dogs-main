@@ -4,6 +4,7 @@ import { getTemperaments, resState, postDogs } from "../actions/index";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "../CSS/CreateDog.css";
+import { validation } from "./Errores";
 
 
 export default function DogCreate() {
@@ -22,16 +23,17 @@ export default function DogCreate() {
     temperament: [],
     created: false,
   });
+  const [errors, setErrors] = useState({});
  
 
   useEffect(() => {
     dispatch(getTemperaments());
     dispatch(resState(resState));
-  }, []);
+  }, [dispatch]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (input.name) {
+  
       let crear = {
         name: input.name,
         height: `${input.minHeight} - ${input.maxHeight}`,
@@ -41,6 +43,7 @@ export default function DogCreate() {
         temperament: input.temperament.join(", "),
       };
       dispatch(postDogs(crear));
+      
       setInput({
         name: "",
         minHeight: "",
@@ -53,14 +56,20 @@ export default function DogCreate() {
         temperament: [],
         created: true,
       });
-    } alert(`${input.name}+ created`)
   }
   function handelChange(e) {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
+    setErrors(
+      validation({
+        ...input,
+          [e.target.name]: e.target.value,
+      })
+    )
   }
+
   function handleSelectTemperament(e) {
   if(!input.temperament.includes(e.target.value)){
   
@@ -103,7 +112,7 @@ export default function DogCreate() {
                 name="name"
                 value={input.name}
                 onChange={(e) => handelChange(e)}
-              />
+              /><br/><strong>{errors.name}</strong>
 
               <label className="title5">Height min:</label>
               <input
@@ -111,7 +120,7 @@ export default function DogCreate() {
                 name="minHeight"
                 value={input.minHeight}
                 onChange={(e) => handelChange(e)}
-              />
+              /><br/><strong>{errors.minHeight}</strong>
 
               <label className="title5">Height max:</label>
               <input
@@ -119,7 +128,7 @@ export default function DogCreate() {
                 name="maxHeight"
                 value={input.maxHeight}
                 onChange={(e) => handelChange(e)}
-              />
+              /><br/><strong>{errors.maxHeight}</strong>
 
               <label className="title5">Weight min:</label>
               <input
@@ -127,7 +136,7 @@ export default function DogCreate() {
                 name="minWeight"
                 value={input.minWeight}
                 onChange={(e) => handelChange(e)}
-              />
+              /><br/><strong>{errors.minWeight}</strong>
 
               <label className="title5">Weight max:</label>
               <input
@@ -135,7 +144,7 @@ export default function DogCreate() {
                 name="maxWeight"
                 value={input.maxWeight}
                 onChange={(e) => handelChange(e)}
-              ></input>
+              ></input><br/><strong>{errors.maxWeight}</strong>
 
               <label className="title5">Life span min:</label>
               <input
@@ -143,7 +152,7 @@ export default function DogCreate() {
                 name="minlife_span"
                 value={input.minlife_span}
                 onChange={(e) => handelChange(e)}
-              />
+              /><br/><strong>{errors.minlife_span}</strong>
 
               <label className="title5">Life span max:</label>
               <input
@@ -151,7 +160,7 @@ export default function DogCreate() {
                 name="maxlife_span"
                 value={input.maxlife_span}
                 onChange={(e) => handelChange(e)}
-              />
+              /><br/><strong>{errors.maxlife_span}</strong>
 
               <label name="image" className="title5">
                 Image:
