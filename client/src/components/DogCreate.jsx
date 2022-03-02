@@ -9,7 +9,7 @@ import { validation } from "./Errores";
 
 export default function DogCreate() {
   const dispatch = useDispatch();
-  const allTemperaments = useSelector((e) => e.temperament);
+  const  allTemperaments= useSelector((e) => e.temperament);
 
   const [input, setInput] = useState({
     name: "",
@@ -24,7 +24,6 @@ export default function DogCreate() {
     createdInBd: false,
   });
   const [errors, setErrors] = useState({});
- 
 
   useEffect(() => {
     dispatch(getTemperaments());
@@ -33,7 +32,6 @@ export default function DogCreate() {
 
   function handleSubmit(e) {
     e.preventDefault();
-  
       let crear = {
         name: input.name,
         height: `${input.minHeight} - ${input.maxHeight}`,
@@ -43,7 +41,6 @@ export default function DogCreate() {
         temperament: input.temperament.join(", "),
       };
       dispatch(postDogs(crear));
-      
       setInput({
         name: "",
         minHeight: "",
@@ -56,6 +53,7 @@ export default function DogCreate() {
         temperament: [],
         createdInBd: true,
       });
+      alert('Dog Create!!')
   }
   function handelChange(e) {
     setInput({
@@ -81,7 +79,7 @@ export default function DogCreate() {
    
   }
   function handleDelete(e) {
-    console.log(e)
+  
     e.preventDefault();
        setInput({
       ...input,
@@ -207,6 +205,7 @@ export default function DogCreate() {
                 onClick={(e) => handleSubmit(e)}
               > Create new Dog
               </button>
+
             </div>
           </form>
         </div>

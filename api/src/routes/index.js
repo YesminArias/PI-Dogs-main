@@ -1,6 +1,6 @@
 const { Router } = require('express');
 // Importar todos los routers;
-const { Dog, Temperament } = require('../db')
+
 
 const dogs = require('./dogs')
 const dog = require('./dog')

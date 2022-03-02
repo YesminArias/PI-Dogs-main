@@ -10,6 +10,8 @@ export function getDogs(){
     }
 }
 
+
+
 export function getTemperaments(){
     return async function (dispatch){
         var json = await axios.get("http://localhost:3001/temperament");
@@ -21,8 +23,8 @@ export function getTemperaments(){
 }
 
 export function getName(name){
-    
     return async function (dispatch){
+
         const json = await axios.get('http://localhost:3001/dogs?name='+ name);
         return dispatch({
             type:"GET_NAME",
@@ -31,7 +33,7 @@ export function getName(name){
     }
 }
 
-export function getDetail(id){
+ export function getDetail(id){
     return async function(dispatch){
         const json = await axios.get('http://localhost:3001/dogs/'+id)
         return dispatch({
@@ -39,7 +41,9 @@ export function getDetail(id){
             payload: json.data,
         })
     }
-} 
+}  
+
+
 
 export function sortName(payload){
     return {

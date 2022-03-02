@@ -24,6 +24,7 @@ function rootReducer(state= inicialState, action){
                 temperament: action.payload 
             }
         case 'GET_NAME':
+            
             return{
                 ...state,
                 dogs: action.payload
@@ -40,7 +41,7 @@ function rootReducer(state= inicialState, action){
                 ...state,
                 dogs: [...state.dogs].sort((a, b) => (a.name.toUpperCase() < b.name.toUpperCase() ? 1 : -1)),
                 }
-            } console.log(action.payload)
+            } 
             return{
                 ...state,
                 dogs: [...state.dogs].sort((a, b) => (a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1)),
@@ -62,7 +63,7 @@ function rootReducer(state= inicialState, action){
                 dogs: filterTemperament,
             }
         case "FILTER_EXISTING_BREED":
-            console.log(action.payload)
+            
             if(action.payload === "todo"){
             
                 return { 
@@ -75,16 +76,12 @@ function rootReducer(state= inicialState, action){
              return { 
                 ...state,
                  dogs : state.allDogs.filter((breed)=> breed.createdInBd === true),
-                /*  allDogs : state.allDogs.filter((breed)=> breed.createdInBd === true)   */  
-                        
                     }
             }else{
                 return { 
                     ...state,
                      dogs : state.allDogs.filter((breed)=> breed.createdInBd === undefined),
-                    /*  allDogs : state.allDogs.filter((breed)=> breed.createdInBd === undefined) */    
-                            
-                        }
+                    }
             }
 
         case 'SORT_WEIGHT':

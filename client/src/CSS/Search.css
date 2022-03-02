@@ -12,6 +12,7 @@
 .search{
     display:flex;
     justify-content:flex-end;
+    margin-left: 60px;
 }
 .figurabuscador{
     padding:3%;

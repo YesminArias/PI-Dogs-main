@@ -24,7 +24,7 @@ export default function Home() {
   };
   useEffect(() => {
     setCurrentPage(1);
-    dispatch(resState(resState));
+  /*   dispatch(resState(resState)); */
   }, [dispatch]);
 
   const mostrarCards = (dogs) => {
@@ -72,13 +72,13 @@ export default function Home() {
     <div>
     
       <div className="principal">
-      <Link to= "/home" >
+     {/*  <Link to= "/home" >
         <img
           id="home"
           src="https://cdn-icons-png.flaticon.com/512/35/35145.png"
           alt="no encontrada"
         />
-          </Link>
+          </Link> */}
       </div>
       <div className="ubboton">
         <Link to="/dog" >

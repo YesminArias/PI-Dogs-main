@@ -1,7 +1,6 @@
 const { Router } = require("express");
 // Importar todos los routers;
 const { Dog, Temperament } = require("../db");
-const { Sequelize } = require("sequelize");
 const { YOUR_API_KEY } = process.env;
 const { default: axios } = require("axios");
 const router = Router();

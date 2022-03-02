@@ -15,16 +15,14 @@ export default function Search() {
      e.preventDefault();
       setName(e.target.value);
      
-      if(name.length>=1){
+      if(name.length>1){
     dispatch(getName(name));
   } else{
     dispatch(getDogs());
   }
 }
-  function handleSubmit(e) {
-    e.preventDefault(); 
-     setName(""); 
-  }
+
+  
   return (
     <div>
          <div className="search">
@@ -32,7 +30,6 @@ export default function Search() {
         type="text"
         placeholder='Dog Breed...'
          onChange={(e) => handleInputChange(e)} 
-         onInput={(e) => handleSubmit(e)} 
         className='buscador'
       /><span className="figurabuscador"> 🔍</span>
      </div> 

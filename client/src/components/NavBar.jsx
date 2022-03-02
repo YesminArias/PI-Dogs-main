@@ -8,7 +8,7 @@ import Search from './Search';
 import FilterExistingBreed from "./FilterExistingBreed";
 
 export default function NavBar(){
-    const dispatch = useDispatch()//para despachar mis acciones
+    const dispatch = useDispatch()
 
     useEffect(() => {
       dispatch(getDogs());
@@ -27,18 +27,21 @@ export default function NavBar(){
 <div>
       
   <div className="filtros">
-   <div>
-     <Search/>
-   </div>
+   
       <div> 
         <FilterTempe /> 
-        <FilterExistingBreed/>
       </div>  
+      <div>
+      <FilterExistingBreed/>
+      </div>
+      <div>
+     <Search/>
+   </div>
       <div>
          <select className="botonfiltro" onChange={e=> handleOrdenarWeitgh(e)}>
             <option value='All'>By Weight</option>
-            <option value='small'> small  </option>
-            <option value='big'> big  </option>
+            <option value='small'> Light  </option>
+            <option value='big'> Heavy  </option>
          </select> 
       </div>  
      

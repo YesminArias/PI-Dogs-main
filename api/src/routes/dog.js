@@ -1,8 +1,8 @@
 const { Router } = require("express");
 // Importar todos los routers;
-const { Dog, Temperament } = require("../db");
-const { Sequelize } = require("sequelize");
-const { default: axios } = require("axios");
+const { Dog } = require("../db");
+
+
 const router = Router();
  
 router.post("/", async (req, res) => {
