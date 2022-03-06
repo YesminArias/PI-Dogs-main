@@ -7,7 +7,6 @@ import Paginado from "./Paginado";
 import Loanding from "./Loanding";
 import "../CSS/Home.css";
 import NavBar from "./NavBar";
-import {  resState } from "../actions";
 
 export default function Home() {
   const dispatch = useDispatch(); //para despachar mis acciones
@@ -24,7 +23,6 @@ export default function Home() {
   };
   useEffect(() => {
     setCurrentPage(1);
-  /*   dispatch(resState(resState)); */
   }, [dispatch]);
 
   const mostrarCards = (dogs) => {
@@ -56,41 +54,33 @@ export default function Home() {
             })
           )}
         </div>
-        <div>
+        
           <Paginado
             dogsPage={dogsPage}
             allDogs={dogs.length}
             paginado={paginado}
           />
-        </div>
+       
       </div>
     );
   };
 
   return (
     <div>
-    <div>
-    
-      <div className="principal">
-     {/*  <Link to= "/home" >
-        <img
-          id="home"
-          src="https://cdn-icons-png.flaticon.com/512/35/35145.png"
-          alt="no encontrada"
-        />
-          </Link> */}
+      <div>
+        
+        <div >
+          <Link to="/dog">
+            <button id="botonCreate">Create Dogs</button>
+          </Link>
+        </div>
+        <div className="principal">
+          <NavBar />
+        </div>
+        <div>
+          {dogs.length > 0 ? mostrarCards(dogs) : mostrarCards(allDogs)}
+        </div>
       </div>
-      <div className="ubboton">
-        <Link to="/dog" >
-          <button id="botonCreate">Create Dogs</button>
-        </Link>
-      </div>
-      <div className="principal">
-
-      <NavBar />
-      </div>
-      <div>{dogs.length > 0 ? mostrarCards(dogs) : mostrarCards(allDogs)}</div>
     </div>
-       </div>
   );
 }

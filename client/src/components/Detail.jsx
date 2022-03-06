@@ -11,6 +11,7 @@ import '../CSS/Detalle.css';
 export default function Detail(){
     const { id }= useParams();
     const dogDetail = useSelector((e)=>e.detail);
+    console.log(dogDetail);
     const dispatch = useDispatch();
 
 
@@ -31,6 +32,7 @@ export default function Detail(){
                 <main className="paginado2">
                     <div>
                         <div >
+                            
                             <img className="imagdetalle" src={dogDetail[0].image} alt= "no tiene imagen"/>
                         </div>
                     </div>

@@ -1,12 +1,5 @@
 
- .imaLoading {
-    display: flex;
-    flex-wrap: wrap;
-    background-repeat: no-repeat;
-    width: 600px;
-    height: 600px;
-    margin-right:10%;
-} 
+
 .paginado{
     display: flex;
     flex-wrap: wrap;

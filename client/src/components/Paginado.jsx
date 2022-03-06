@@ -9,8 +9,8 @@ export default function Paginado({dogsPage, allDogs, paginado}){
     
 
     return (
-        <div className="paginado">
-           
+        <div >
+           <div className="paginado9">
             {pageNumber.length >1 && pageNumber.map((number)=> {
                 return (
                     <ul key= {number}>
@@ -21,7 +21,7 @@ export default function Paginado({dogsPage, allDogs, paginado}){
               
                 )
             })}
-            
+            </div>
         </div>
     )
 }

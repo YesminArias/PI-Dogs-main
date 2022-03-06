@@ -166,6 +166,7 @@ export default function DogCreate() {
               <input
                 name="image"
                 value={input.image}
+                placeholder='URL'
                 onChange={(e) => handelChange(e)}
               ></input>
 

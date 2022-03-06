@@ -23,16 +23,25 @@
     margin-left: 100px;
     margin-top: 300px;
     background: white;
-    font-size: 50px;
+    font-size: 40px;
 
 } 
 #justificado{
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
+   justify-content: space-evenly;
    margin: 5%;
 }
 
 html{
     background: url("../imagen/fondo2.jpg");
 }
+
+.imaLoading {
+    display: flex;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 400px;
+    margin-right:150px;
+} 

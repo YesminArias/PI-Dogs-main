@@ -4,16 +4,20 @@
     font-family:  inherit;
     cursor: pointer;
     border-radius: 15%;
-   justify-content: flex-end;
-   width: 35px;
+    width: 35px;
+    margin: 1%;
+    display: flex;
+    flex-direction: row;
    
 }
 .botonPaginado:hover{
     background-color: rgba(40, 89, 224, 0.986); 
     height: 110%;
 }
-.paginado{
+.paginado9{
     display: flex;
-    flex-wrap: row;
-    justify-content: space-evenly;
+    direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
     }
